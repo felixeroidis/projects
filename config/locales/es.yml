@@ -1,0 +1,8 @@
+es:
+  projects:
+    name: nombre
+    description: descripción
+    ends_at: termina en
+    Show: Mostrar
+    Back: Regresar
+    Sidebar: Barra lateral

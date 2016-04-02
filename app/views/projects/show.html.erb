@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @project.name %>
+</h1>
+
+<blockquote> <%=@project.description %> </blockquote>
+
+<p>
+  <strong>Ends at:</strong>
+  <%= @project.ends_at %>
+</p>
+
+<h2> Tasks for this project</h2>
+
+<ul>
+  <% @project.tasks.each do |task| %>
+  <li>
+    <%= check_box_tag "task_done_#{task.id}", "", task.done, class: "task_done", data: {id: task.id} %>
+    <%= link_to task.title, task %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
